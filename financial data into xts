@@ -1,0 +1,8 @@
+#Heromotocorp is an Indian company and the data taken from the screener.
+#The data is 1st save in excel and then imported into r.
+#Now its time to convert imported data into xts object.
+
+
+hero <- as.date(hero[,1] ) 
+hero <- hero %>% remove_rownames %>% column_to_rownames(var="Date")
+hero <- as.xts(hero)
